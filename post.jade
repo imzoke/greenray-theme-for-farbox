@@ -1,0 +1,35 @@
+extends _views/base
+block title
+  post.title
+block content
+  .sidebar
+    header#header
+      h2.site-title: a(href = "/")
+        = site.configs.author or site.title
+      p.subtitle
+        = site.configs.subtitle
+  #main
+    #primary.content-area
+      article.article.page
+        header.article-header
+          h1.article-title= post.title
+          .article-meta Posted on
+            time(datetime=post.date.isoformat())= post.date.format('%B %d, %Y')
+        .article-content= post.content
+        .article-footer
+      // paginator
+      if pre_one or next_one
+        nav#page-nav
+          .nav-links
+            .nav-previous
+              if next_one
+                a(title = 'Previous', href = next_one.url)
+                  span.nav-meta ←
+                    = ' ' + next_one.title
+            .nav-next
+              if pre_one
+                a(title = 'Next', href = pre_one.url)
+                  = pre_one.title + ' '
+                  span.meta-nav →
+      include include/comments
+      include _views/footer

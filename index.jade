@@ -1,0 +1,35 @@
+extends _views/base
+block content
+  .sidebar
+    header#header
+      h1.site-title: a(href = "/")
+        = site.configs.author or site.title
+      p.subtitle
+        = site.configs.subtitle
+  #main
+    #primary.content-area
+      for post in posts
+        article.article
+          header.article-header
+            h2.article-title
+              a(href = post.url)= post.title
+            .article-meta Posted on
+              time(datetime=post.date.isoformat())= post.date.format('%B %d, %Y')
+          .article-content= post.content(250)
+            p.article-more-link
+              a(rel="nofollow", href=post.url + '#more') Keep reading...
+          .article-footer
+      // paginator
+      if paginator.has_pre or paginator.has_next
+        nav#page-nav
+          .nav-links
+            .nav-previous
+              if paginator.has_next
+                a(title = 'Previous', href = paginator.next_page_url)
+                  span.nav-meta ←
+                  |  Older posts
+            .nav-next
+              if paginator.has_pre
+                a(title = 'Next', href = paginator.pre_page_url) Newer posts 
+                  span.meta-nav →
+      include _views/footer

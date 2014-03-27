@@ -1,0 +1,19 @@
+extends _views/base
+block title
+  | Page not found
+block content
+  .sidebar
+    header#header
+      h2.site-title: a(href = "/")
+        = site.configs.author or site.title
+      p.subtitle
+        = site.configs.subtitle
+  #main
+    #primary.content-area
+      article.article
+        header.article-header
+          h1.article-title Oh, darn, nothing here!
+        .article-content
+          p It looks like this page has gone to page heaven. Try clicking the site title to go back home.
+        .article-footer
+      include _views/footer

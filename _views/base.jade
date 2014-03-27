@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title
+      block title
+        site.title
+    meta(name="description", content=site.raw_content)
+    link(href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700', rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Source+Code+Pro', rel='stylesheet')
+    load('/template/css/style.css')
+
+  body
+    #container
+      #wrapper
+        block content
