@@ -1,7 +1,9 @@
-# Greenray theme for farbox
+# Greenray theme for FarBox
 
-This is a theme for farbox.
-
-Greenray 是一个简洁的主题，抛弃繁杂，回归最纯粹的阅读。
+Greenray 是一个简洁的主题，抛弃繁杂，回归最纯粹的写作与阅读。
 
 [演示](http://imzoke.farbox.com)
+
+## License
+
+MIT
