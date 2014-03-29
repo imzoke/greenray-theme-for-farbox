@@ -15,7 +15,7 @@ block content
               a(href = post.url)= post.title
             .article-meta Posted on
               time(datetime=post.date.isoformat())= post.date.format('%B %d, %Y')
-          .article-content= post.content(250)
+          .article-content= post.content.opening or post.content(250)
             p.article-more-link
               a(rel="nofollow", href=post.url + '#more') Keep reading...
           .article-footer
